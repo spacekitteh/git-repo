@@ -534,6 +534,7 @@ def _DownloadBundle(url, local, quiet):
       cwd=local,
       stdout=subprocess.PIPE)
   for line in proc.stdout:
+    print(line)
     m = re.compile(r'^url\.(.*)\.insteadof (.*)$').match(line)
     if m:
       new_url = m.group(1)
